@@ -1,4 +1,4 @@
-import data from "../../data.json";
+import data from "./data.json";
 
 const promise = new Promise((resolve, reject)=>{
     let status = 200

@@ -4,7 +4,7 @@
       "name":"Shirt",
       "price":30,
       "stock":10,
-      "type":"top",
+      "type":"tops",
       "pictureSRC":"https://i.ibb.co/19tYYRp/shirt-model.jpg"
    },
    {
@@ -12,7 +12,7 @@
       "name":"T-Shirt",
       "price":20,
       "stock":10,
-      "type":"top",
+      "type":"tops",
       "pictureSRC":"https://i.ibb.co/x3GH5Rg/tshirt-model.jpg"
    },
    {
@@ -20,7 +20,7 @@
       "name":"Sweater",
       "price":40,
       "stock":10,
-      "type":"top",
+      "type":"tops",
       "pictureSRC":"https://i.ibb.co/SDkGH8y/sweater-model.jpg"
    },
    {
@@ -28,7 +28,7 @@
        "name":"Blue Pants",
        "price":50,
        "stock":10,
-       "type":"bottom",
+       "type":"bottoms",
        "pictureSRC":"https://i.ibb.co/WGHph0Q/bluepants-model.jpg"
    },
    {
@@ -36,7 +36,7 @@
       "name":"Black Pants",
       "price":50,
       "stock":10,
-      "type":"bottom",
+      "type":"bottoms",
       "pictureSRC":"https://i.ibb.co/L8XXBzP/blackpants-model.jpg"
    },
    {
@@ -44,7 +44,7 @@
       "name":"Jeans",
       "price":55,
       "stock":10,
-      "type":"bottom",
+      "type":"bottoms",
       "pictureSRC":"https://i.ibb.co/jkFpQg7/jeans-model.jpg"
    },
    {
@@ -57,7 +57,7 @@
    },
    {
       "id":8,
-      "name":"Sport Shoes",
+      "name":"Sports Shoes",
       "price":50,
       "stock":10,
       "type":"shoes",
@@ -68,7 +68,7 @@
       "name":"Sunglasses",
       "price":25,
       "stock":10,
-      "type":"accesory",
+      "type":"accesories",
       "pictureSRC":"https://i.ibb.co/Kxfzq7h/glasses-side.jpg"
    },
    {
@@ -76,7 +76,7 @@
       "name":"Bracelet",
       "price":20,
       "stock":10,
-      "type":"accesory",
+      "type":"accesories",
       "pictureSRC":"https://i.ibb.co/RhrTdFh/bracelet-model.jpg"
    }
 ]

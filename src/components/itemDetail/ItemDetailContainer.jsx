@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-import { getData } from './getData.js'
+import { getData } from '../../data/getData'
 import ItemDetail from "./ItemDetail"
 import "./itemDetail.css"
 
 function ItemDetailContainer() {
-
+    
     const [item, setItem] = useState(false)
     const { itemId } = useParams()
 
@@ -30,8 +30,7 @@ function ItemDetailContainer() {
             {item === false && (
                 <div>Loading...</div>
             )}
-        </div>
-        
+        </div>  
     )
 }
 

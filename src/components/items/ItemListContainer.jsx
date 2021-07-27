@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-import { getData } from './getData.js' 
+import { getData } from '../../data/getData'
 import { Container } from 'react-bootstrap'
 import ItemList from './ItemList'
 import "./item.css"
@@ -8,6 +8,7 @@ import "./item.css"
 function ItemListContainer() {
 
     const [items, setItems] = useState(false)
+    const [cats, setCats] = useState([])
     const { categoryId } = useParams()
 
     useEffect(()=>{
@@ -18,7 +19,10 @@ function ItemListContainer() {
             
             if(categoryId === undefined){
                 getData()
-                    .then(res => { setItems(res)})
+                    .then(res => { 
+                        setItems(res)
+                        res.map(it => setCats(it.type))
+                    })
                     .catch(err => {console.log("Error: " + err)})
                     .finally(()=> {console.log("Finish")})
 

@@ -6,9 +6,10 @@ import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({cats}) {
+
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu" >
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu" cats={cats} >
             <Navbar.Brand as={Link} to="/" className="brand">Peter's Clothing Store</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <CartWidget />
@@ -16,10 +17,13 @@ function NavBar() {
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/" >Home</Nav.Link>
                     <NavDropdown title="Categories" id="collasible-nav-dropdown">
-                        <NavDropdown.Item as={Link} to="/category/top">Tops</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="/category/bottom">Bottoms</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="/category/shoes">Shoes</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="/category/accesory">Accesories</NavDropdown.Item>
+                        {
+                            cats.map(it => <NavDropdown.Item 
+                                as={Link} 
+                                to={`/category/${it}`} >
+                                    {it}
+                                </NavDropdown.Item>)
+                        }
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
