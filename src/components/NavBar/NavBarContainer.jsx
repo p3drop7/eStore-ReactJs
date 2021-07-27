@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getData } from '../../data/getData';
 import NavBar from './NavBar';
-import './NavBar.css'
+import './navBar.css'
 
 function NavBarContainer() {
     const [cats, setCats] = useState([])

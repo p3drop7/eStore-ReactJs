@@ -8,21 +8,17 @@ import "./item.css"
 function ItemListContainer() {
 
     const [items, setItems] = useState(false)
-    const [cats, setCats] = useState([])
     const { categoryId } = useParams()
 
     useEffect(()=>{
         
         setItems(false)
-
+        
         setTimeout(()=>{
             
             if(categoryId === undefined){
                 getData()
-                    .then(res => { 
-                        setItems(res)
-                        res.map(it => setCats(it.type))
-                    })
+                    .then(res => {setItems(res)})
                     .catch(err => {console.log("Error: " + err)})
                     .finally(()=> {console.log("Finish")})
 
