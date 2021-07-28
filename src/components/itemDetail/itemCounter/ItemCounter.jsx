@@ -14,17 +14,13 @@ function ItemCounter({stock, initial}) {
 
     function add(){
         if(quantity < stock){
-            let x = quantity
-            x++
-            setQuantity(x)
+            setQuantity(quantity + 1)
         }
     }
 
     function substract(){
-        if(quantity > 1){
-            let x = quantity
-            x = x - 1
-            setQuantity(x)
+        if(quantity > initial){
+            setQuantity(quantity - 1)
         }
     }
 

@@ -34,8 +34,6 @@ function App() {
 
       </BrowserRouter>
 
-      <InputKeyDown />
-
     </div>
   );
 }

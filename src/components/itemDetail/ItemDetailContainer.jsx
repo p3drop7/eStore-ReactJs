@@ -15,7 +15,8 @@ function ItemDetailContainer() {
         
         setTimeout(()=>{
             getData()
-            .then(res => { setItem( res.filter( it => it.id === parseInt(itemId) )[0])})
+            /* .then(res => { setItem( res.filter( it => it.id === parseInt(itemId))[0])}) */
+            .then( res => { setItem( res.find( it => it.id === parseInt(itemId))) })
             .catch(err => {console.log("Error: " + err)})
             .finally(()=> {console.log("Finish")})
         }, 1000)
