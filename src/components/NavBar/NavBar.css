@@ -1,3 +1,7 @@
+.navbar {
+    position: sticky!important;
+}
+
 .navMenu {
     width: 100%;
     position: sticky;

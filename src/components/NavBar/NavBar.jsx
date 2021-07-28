@@ -22,7 +22,7 @@ function NavBar({cats}) {
                                 as={Link} 
                                 key={cats.indexOf(it)}
                                 to={`/category/${it}`} >
-                                    {it}
+                                    {it.charAt(0).toUpperCase() + it.slice(1)}
                                 </NavDropdown.Item>)
                         }
                     </NavDropdown>

@@ -26,12 +26,15 @@ function ItemCounter({stock, initial}) {
 
     return (
         <div className="ItemCountContainer" >
-            <div stock="5">
-                <button onClick={add} ><FontAwesomeIcon icon={faPlus}/></button>
-                <div>{quantity}</div>
+            
+            <div>
                 <button onClick={substract} ><FontAwesomeIcon icon={faMinus} /></button>
+                <div>{quantity}</div>
+                <button onClick={add} ><FontAwesomeIcon icon={faPlus}/></button>
             </div>
+
             <Button className="addButton" variant="primary" onClick={addToCart}>Add to cart</Button>
+            
         </div>
     )
 }
