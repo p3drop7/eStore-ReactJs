@@ -1,13 +1,9 @@
-import { useContext, useState, useEffect } from 'react'
+/* import { useContext, useState, useEffect } from 'react'
 import CartContext from '../context/CartContext'
-
-
-const cartItems = {}
 
 function CartContainer() {
 
     const [cart, setCart] = useState({})
-    const cart = useContext(CartContext)
 
     useEffect(() => {
 
@@ -21,4 +17,4 @@ function CartContainer() {
     )
 }
 
-export default CartContainer
+export default CartContainer */

@@ -1,16 +1,15 @@
 import React from 'react'
+import Detail from './Detail'
 import ItemCounter from './ItemCounter/ItemCounter'
+import "./itemDetail.css"
+import "../ItemDetail/ItemCounter/itemCounter.css"
 
 function ItemDetail({item}) {
 
     return (
         <div className="itemDetail" >
-            <img src={item.pictureSRC} alt={item.name} />
-            <div>
-                <p className="detailTitle" >{item.name}</p>
-                <p className="detailPrice" >${item.price}</p>
-                <ItemCounter stock={item.stock} initial={1} />
-            </div>
+            <Detail item={item} />
+            <ItemCounter stock={item.stock} initial={1} />
         </div>
     )
 }

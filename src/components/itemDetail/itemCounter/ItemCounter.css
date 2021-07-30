@@ -1,8 +1,11 @@
 .ItemCountContainer {
     height: auto;
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-flow: column nowrap;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .ItemCountContainer div {
@@ -12,6 +15,10 @@
     flex-flow: row nowrap !important;
     justify-content: space-between;
     align-items: center;
+}
+
+.ItemCountContainer div div {
+    justify-content: center;
 }
 
 .ItemCountContainer div button {

@@ -1,34 +1,45 @@
 .itemDetailContainer {
     height: 80vh;
-    width: 100%;
+    width: auto;
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 }
 
 .itemDetail {
-    height: 80%;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.itemDetail img {
     height: 100%;
-    width: auto;
+    width: 740px;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "itemPicture itemDescription"
+        "itemPicture itemCounter";
 }
 
-.itemDetail div {
-    margin: 0px 20px;
+.itemPicture {
+    grid-area: itemPicture;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    width: 100%;
+    justify-self: center;
+}
+
+.itemDescription {
+    grid-area: itemDescription;
+    width: 60%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-self: center;
+    justify-content: flex-end;
     align-items: center;
-} 
+}
 
 .detailTitle {
     margin: 0px;
@@ -41,4 +52,8 @@
     font-size: 1.5em;
     color: #212120;
     font-weight: lighter;
+}
+
+.ItemCountContainer {
+    grid-area: itemCounter;
 }
