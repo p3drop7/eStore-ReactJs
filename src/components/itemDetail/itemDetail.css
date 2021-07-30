@@ -57,3 +57,10 @@
 .ItemCountContainer {
     grid-area: itemCounter;
 }
+
+.confirmAddButton {
+    height: 40px !important;
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+}

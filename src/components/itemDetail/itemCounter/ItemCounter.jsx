@@ -5,32 +5,14 @@ import { Button } from 'react-bootstrap'
 import './itemCounter.css'
 import "../itemDetail.css"
 
-function ItemCounter({stock, initial}) {
+function ItemCounter({addToCart, substract, add, counter}) {
     
-    const [quantity, setQuantity] = useState(initial)
-
-    function addToCart(){
-        alert(`You added ${quantity}`)
-    }
-
-    function add(){
-        if(quantity < stock){
-            setQuantity(quantity + 1)
-        }
-    }
-
-    function substract(){
-        if(quantity > initial){
-            setQuantity(quantity - 1)
-        }
-    }
-
     return (
         <div className="ItemCountContainer" >
             
             <div>
                 <button onClick={substract} ><FontAwesomeIcon icon={faMinus} /></button>
-                <div>{quantity}</div>
+                <div>{counter}</div>
                 <button onClick={add} ><FontAwesomeIcon icon={faPlus}/></button>
             </div>
 
