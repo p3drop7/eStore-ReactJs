@@ -56,11 +56,16 @@
 
 .ItemCountContainer {
     grid-area: itemCounter;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .confirmAddButton {
     height: 40px !important;
     width: 60%;
+    margin-top: 15px;
     align-self: center;
     justify-self: center;
 }

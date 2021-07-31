@@ -4,10 +4,10 @@ import { Button } from 'react-bootstrap'
 import './itemCounter.css'
 import "../itemDetail.css"
 
-function ItemCounter({addToCart, substract, add, counter}) {
+function ItemCounter({addToCart, substract, add, counter, quantity}) {
     
     return (
-        <div className="ItemCountContainer" >
+        <>
             
             <div>
                 <button onClick={substract} ><FontAwesomeIcon icon={faMinus} /></button>
@@ -17,7 +17,7 @@ function ItemCounter({addToCart, substract, add, counter}) {
 
             <Button className="addButton" variant="primary" onClick={addToCart}>Add to cart</Button>
             
-        </div>
+        </>
     )
 }
 

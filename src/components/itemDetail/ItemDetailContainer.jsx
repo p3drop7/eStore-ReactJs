@@ -11,12 +11,13 @@ function ItemDetailContainer() {
 
     useEffect(()=>{
         setItem(false)
+
         setTimeout(()=>{
 
             getData()
-            .then( res => { setItem( res.find( it => it.id === parseInt(itemId)))})
-            .catch(err => { console.log("Error: " + err) })
-            .finally(()=> { console.log("Finish") })
+                .then( res => { setItem( res.find( it => it.id === parseInt(itemId)))})
+                .catch(err => { console.log("Error: " + err) })
+                .finally(()=> { console.log("Finish") })
 
         }, 1000)
         

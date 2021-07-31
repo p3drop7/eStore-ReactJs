@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import Detail from './Detail'
-import ItemCounter from './ItemCounter/ItemCounter'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import Detail from './Detail'
+import ItemCounter from './ItemCounter/ItemCounter'
+import { CartUpdateContext, CartContext } from '../Cart/CartContext'
 import "./itemDetail.css"
 import "../ItemDetail/ItemCounter/itemCounter.css"
+
 
 function ItemDetail({item}) {
 
     const [counter, setCounter] = useState(1)
     const [quantity, setQuantity] = useState(false)
+    const updateCart = useContext(CartUpdateContext)
+    const cart = useContext(CartContext)
 
     function add(){
         if(counter < item.stock){
@@ -24,26 +28,46 @@ function ItemDetail({item}) {
     }
 
     function addToCart(){
-        setQuantity(counter)
+        
+        if(cart.length === 0){
+            
+            setQuantity(counter)
+            console.log("quantity es " + quantity)
+            updateCart({item: item, quantity: quantity})
+
+        }else if( cart.some(it => it.item.id === item.id) ){
+
+            alert("Your already added " + item.name)
+        
+        }else{
+            
+            setQuantity(counter)
+            console.log("quantity es " + quantity)
+            updateCart({item: item, quantity: quantity})
+        }
     }
 
-    console.log(quantity)
 
     return (
         <div className="itemDetail" >
-            <Detail item={item} />
+            <Detail item={item}/>
 
             {quantity === false && (
-                <ItemCounter 
-                add={add}
-                substract={substract}
-                addToCart={addToCart}
-                counter={counter} 
-                />
+                <div className="ItemCountContainer">
+                    <ItemCounter 
+                    add={add}
+                    substract={substract}
+                    addToCart={addToCart}
+                    counter={counter}
+                    />
+                </div>
             )}
 
             {quantity && (
-                <Button as={Link} to="/cart" className="confirmAddButton" >Confirm purchase</Button>
+                <div className="ItemCountContainer">
+                    <Button variant="success" as={Link} to="/cart" className="confirmAddButton" >Go to cart</Button>
+                    <Button variant="secondary" as={Link} to="/" className="confirmAddButton" >Go back</Button>
+                </div>
             )}
                 
         </div>

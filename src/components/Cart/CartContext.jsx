@@ -1,29 +1,26 @@
-import { useState } from 'react'
-import { useEffect } from 'react'
-import {createContext} from 'react'
-import { getData } from '../../data/getData'
+import { useState, createContext, useEffect } from 'react'
 
-function CartContext() {
+export const CartContext = createContext()
+export const CartUpdateContext = createContext()
 
-    const [cartItems, setCartItems] = useState([])
-    const [data, setData] = useState([])
+export function CartContextProvider({children}) {
 
-    useEffect(() => {
-        getData()
-            .then(res => setData(res))
-    }, [])
+    const [cart, setCart] = useState([])
 
-    const addItem =(item)=> {
-        if(item.id === (cartItems.find(it => it.id === item.id))){
-            console.log("No adding " + item)
-        }else{
-            setCartItems([... item])
-        }
+    function updateCart(item){
+        setCart([...cart, item])
     }
 
-    const CartContext = createContext()
+    useEffect(() => {
+        console.log("Aca debajo va el cart en el context")
+        console.log(cart)
+    }, [cart])
 
-    return CartContext
+    return(
+        <CartContext.Provider value={cart} >
+            <CartUpdateContext.Provider value={updateCart} >
+                {children}
+            </CartUpdateContext.Provider>
+        </CartContext.Provider>
+    )
 }
-
-export default CartContext
