@@ -37,7 +37,7 @@ function ItemDetail({item}) {
 
         }else if( cart.some(it => it.item.id === item.id) ){
 
-            alert("Your already added " + item.name)
+            alert("You already added " + item.name)
         
         }else{
             
