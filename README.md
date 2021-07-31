@@ -2,7 +2,7 @@
 
 Peter's Clothing Store es un e-commerce para la venta de ropa, zapatos y accesorios.
 
-este proyecto cuenta con
+Este proyecto cuenta con
 
 - Un Navbar con un carrito.
 - Una vista principal con la lista de items completa, traída desde una base de datos en un archivo JSON.
