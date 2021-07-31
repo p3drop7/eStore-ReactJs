@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { getData } from '../../data/getData'
 import { Container } from 'react-bootstrap'
 import ItemList from './ItemList'
-import "./item.css"
+import "./Item.css"
 
 function ItemListContainer() {
 

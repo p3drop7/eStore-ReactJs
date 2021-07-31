@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getData } from '../../data/getData'
 import ItemDetail from "./ItemDetail"
-import "./itemDetail.css"
+import "./ItemDetail.css"
 
 function ItemDetailContainer() {
     

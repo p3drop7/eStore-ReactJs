@@ -4,8 +4,8 @@ import { Button } from 'react-bootstrap'
 import Detail from './Detail'
 import ItemCounter from './ItemCounter/ItemCounter'
 import { CartUpdateContext, CartContext } from '../Cart/CartContext'
-import "./itemDetail.css"
-import "../ItemDetail/ItemCounter/itemCounter.css"
+import "./ItemDetail.css"
+
 
 
 function ItemDetail({item}) {

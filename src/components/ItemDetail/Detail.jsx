@@ -1,6 +1,6 @@
 import React from 'react'
-import "./itemDetail.css"
-import "../ItemDetail/ItemCounter/itemCounter.css"
+import "./ItemDetail.css"
+import "../ItemDetail/ItemCounter/ItemCounter.css"
 
 function Detail({item={}}) {
     return (

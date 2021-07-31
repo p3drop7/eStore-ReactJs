@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'react-bootstrap'
-import './itemCounter.css'
-import "../itemDetail.css"
+import './ItemCounter.css'
+import "../ItemDetail.css"
 
 function ItemCounter({addToCart, substract, add, counter, quantity}) {
     
