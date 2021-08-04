@@ -17,7 +17,6 @@ function CartContainer() {
                         quantity={element.quantity}
                     />
             )}
-            <p></p>
         </div>
     )
 }
