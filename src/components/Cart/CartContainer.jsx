@@ -14,6 +14,7 @@ function CartContainer() {
                     <CartItem
                         key={element.item.id}
                         item={element.item}
+                        quantity={element.quantity}
                     />
             )}
             <p></p>

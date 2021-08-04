@@ -32,8 +32,7 @@ function ItemDetail({item}) {
         if(cart.length === 0){
             
             setQuantity(counter)
-            console.log("quantity es " + quantity)
-            updateCart({item: item, quantity: quantity})
+            updateCart({item: item, quantity: counter})
 
         }else if( cart.some(it => it.item.id === item.id) ){
 
@@ -42,8 +41,7 @@ function ItemDetail({item}) {
         }else{
             
             setQuantity(counter)
-            console.log("quantity es " + quantity)
-            updateCart({item: item, quantity: quantity})
+            updateCart({item: item, quantity: counter})
         }
     }
 

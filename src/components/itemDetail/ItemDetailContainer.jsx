@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getData } from '../../data/getData'
 import ItemDetail from "./ItemDetail"
+import Spinner from 'react-bootstrap/spinner'
 import "./ItemDetail.css"
 
 function ItemDetailContainer() {
@@ -25,12 +26,10 @@ function ItemDetailContainer() {
 
     return (
         <div className="itemDetailContainer" >
-            {item && (
-            <ItemDetail item={item} />
-            )}
-            {item === false && (
-                <div>Loading...</div>
-            )}
+            {
+                item ? <ItemDetail item={item} />
+                     : <Spinner animation="border" variant="primary" />
+            }
         </div>  
     )
 }

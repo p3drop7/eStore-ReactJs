@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from 'react'
+import { useState, createContext } from 'react'
 
 export const CartContext = createContext()
 export const CartUpdateContext = createContext()
@@ -10,11 +10,6 @@ export function CartContextProvider({children}) {
     function updateCart(item){
         setCart([...cart, item])
     }
-
-    useEffect(() => {
-        console.log("Aca debajo va el cart en el context")
-        console.log(cart)
-    }, [cart])
 
     return(
         <CartContext.Provider value={cart} >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getData } from '../../data/getData'
-import { Container } from 'react-bootstrap'
+import { Container, Spinner } from 'react-bootstrap'
 import ItemList from './ItemList'
 import "./Item.css"
 
@@ -33,12 +33,10 @@ function ItemListContainer() {
 
     return (
         <Container className="itemListContainer" >
-            {items && (
-                <ItemList items={items} />
-            )}
-            {items === false && (
-                <div>Loading...</div>
-            )}
+            { 
+                items ? <ItemList items={items} />
+                      : <Spinner animation="border" variant="primary" />
+            }
         </Container>
     )
 }
