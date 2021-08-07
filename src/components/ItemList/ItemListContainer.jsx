@@ -3,13 +3,21 @@ import { useParams } from 'react-router'
 import { getData } from '../../data/getData'
 import { Container, Spinner } from 'react-bootstrap'
 import ItemList from './ItemList'
+import { getFirestore } from '../../data/firebaseService'
 import "./Item.css"
 
 function ItemListContainer() {
 
     const [items, setItems] = useState(false)
     const { categoryId } = useParams()
-
+    
+    useEffect(() => {
+        
+        const dbQuery = getFirestore()
+        dbQuery.collection('items').get()
+        .then(res => console.log(res.docs))
+    }, [])
+    
     useEffect(()=>{
         
         setItems(false)
