@@ -49,7 +49,8 @@ function ItemDetail({item}) {
     return (
         <div className="itemDetail" >
             <Detail item={item}/>
-
+            {console.log("aca va el item")}
+            {console.log(item)}
             {quantity === false && (
                 <div className="ItemCountContainer">
                     <ItemCounter 

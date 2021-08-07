@@ -11,12 +11,12 @@ function ItemListContainer() {
     const [items, setItems] = useState(false)
     const { categoryId } = useParams()
     
-    useEffect(() => {
+    /* useEffect(() => {
         
         const dbQuery = getFirestore()
         dbQuery.collection('items').get()
         .then(res => console.log(res.docs))
-    }, [])
+    }, []) */
     
     useEffect(()=>{
         
