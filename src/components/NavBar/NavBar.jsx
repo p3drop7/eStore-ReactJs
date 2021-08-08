@@ -1,18 +1,23 @@
-import React from 'react'
+import { useContext } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
+import { CartContext } from '../Cart/CartContext';
 
 function NavBar({cats}) {
 
+    const { cart } = useContext(CartContext)
+    
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu" cats={cats} >
             <Navbar.Brand as={Link} to="/" className="brand">Peter's Clothing Store</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <CartWidget />
+            {
+                cart.length >= 1 && <CartWidget />
+            }
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link as={Link} to="/" >Home</Nav.Link>

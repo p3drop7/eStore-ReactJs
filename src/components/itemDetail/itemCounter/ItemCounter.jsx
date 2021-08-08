@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 import './ItemCounter.css'
 import "../ItemDetail.css"
 
-function ItemCounter({addToCart, substract, add, counter, quantity}) {
+function ItemCounter({addToCart, substract, add, counter}) {
     
     return (
         <>

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react"
 
-function CartItem({id, item, quantity}) {
+function CartItem({item, quantity, removeItem}) {
     
     return (
         <div>
             <h2>Product: {item.name}</h2>
             <p>Quantity: {quantity}</p>
-            {/* <button onClick={removeItem(id)}></button> */}
+            <button onClick={()=> removeItem(item.id)}>X</button>
         </div>
     )
 }
