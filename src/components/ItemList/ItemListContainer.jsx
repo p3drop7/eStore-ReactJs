@@ -11,14 +11,27 @@ function ItemListContainer() {
     const [items, setItems] = useState(false)
     const { categoryId } = useParams()
     
-    /* useEffect(() => {
+    useEffect(() => {
         
-        const dbQuery = getFirestore()
-        dbQuery.collection('items').get()
-        .then(res => console.log(res.docs))
-    }, []) */
+        const data = getFirestore()
+
+        if(categoryId === undefined){
+            
+            data.collection('items').get()
+                .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
+                .catch(err => console.log("Error " + err))
+                .finally( ()=> console.log("Firestore 'items' collection loaded") )
+        }else{
+            
+            data.collection('items').where("type", "==", categoryId).get()
+                .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
+                .catch(err => console.log("Error " + err))
+                .finally( ()=> console.log("Firestore 'items' collection loaded by category") )
+        }
+            
+    }, [categoryId])
     
-    useEffect(()=>{
+    /* useEffect(()=>{
         
         setItems(false)
         
@@ -37,7 +50,7 @@ function ItemListContainer() {
                     .finally(()=> {console.log("Finish")})
             }
         }, 1000)          
-    }, [categoryId])
+    }, [categoryId]) */
 
     return (
         <Container className="itemListContainer" >

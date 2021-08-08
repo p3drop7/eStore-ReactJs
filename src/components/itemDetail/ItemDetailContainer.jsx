@@ -4,13 +4,25 @@ import { getData } from '../../data/getData'
 import ItemDetail from "./ItemDetail"
 import Spinner from 'react-bootstrap/spinner'
 import "./ItemDetail.css"
+import { getFirestore } from '../../data/firebaseService'
 
 function ItemDetailContainer() {
     
     const [item, setItem] = useState(false)
     const { itemId } = useParams()
 
-    useEffect(()=>{
+    useEffect(() => {
+        const data = getFirestore()
+        data.collection('items').get()
+            .then(res => {
+                const dataLoaded = res.docs.map( item => ({...item.data(), id: item.id}) )
+                const dataFiltered = dataLoaded.find( item => item.id === itemId )
+                setItem(dataFiltered)
+            })
+            .finally(()=> console.log("Detail loaded"))
+    }, [itemId])
+
+    /* useEffect(()=>{
         setItem(false)
 
         setTimeout(()=>{
@@ -22,7 +34,7 @@ function ItemDetailContainer() {
 
         }, 1000)
         
-    }, [itemId])
+    }, [itemId]) */
 
     return (
         <div className="itemDetailContainer" >

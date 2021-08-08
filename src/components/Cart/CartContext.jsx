@@ -48,7 +48,6 @@ export function CartContextProvider({children}) {
 
     function getTotalPrice(newCartList){
         const total = newCartList.reduce( (acum, value) => acum + (value.quantity * value.item.price), 0)
-        console.log("total es " + total)
         return total
     }
 
