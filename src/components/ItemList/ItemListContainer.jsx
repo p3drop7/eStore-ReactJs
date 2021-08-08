@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-import { getData } from '../../data/getData'
 import { Container, Spinner } from 'react-bootstrap'
 import ItemList from './ItemList'
 import { getFirestore } from '../../data/firebaseService'
@@ -21,8 +20,8 @@ function ItemListContainer() {
                 .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
                 .catch(err => console.log("Error " + err))
                 .finally( ()=> console.log("Firestore 'items' collection loaded") )
+        
         }else{
-            
             data.collection('items').where("type", "==", categoryId).get()
                 .then(res=> setItems( res.docs.map(item => ({...item.data(), id: item.id} ))))
                 .catch(err => console.log("Error " + err))

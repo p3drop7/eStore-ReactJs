@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
-import { getData } from '../../data/getData'
 import ItemDetail from "./ItemDetail"
 import Spinner from 'react-bootstrap/spinner'
 import "./ItemDetail.css"
@@ -12,14 +11,19 @@ function ItemDetailContainer() {
     const { itemId } = useParams()
 
     useEffect(() => {
+        
         const data = getFirestore()
-        data.collection('items').get()
+        data.collection('items').doc(itemId).get()
+            .then(res => setItem( {...res.data(), id: res.id} ))
+            .finally(()=> console.log("Detail loaded"))
+
+            /* data.collection('items').get()
             .then(res => {
                 const dataLoaded = res.docs.map( item => ({...item.data(), id: item.id}) )
                 const dataFiltered = dataLoaded.find( item => item.id === itemId )
                 setItem(dataFiltered)
             })
-            .finally(()=> console.log("Detail loaded"))
+            .finally(()=> console.log("Detail loaded")) */
     }, [itemId])
 
     /* useEffect(()=>{
