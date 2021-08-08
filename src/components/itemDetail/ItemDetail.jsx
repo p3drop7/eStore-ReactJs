@@ -12,7 +12,7 @@ function ItemDetail({item}) {
 
     const [counter, setCounter] = useState(1)
     const [quantityAdded, setQuantityAdded] = useState(false)
-    const {cart, updateCart} = useContext(CartContext)
+    const {updateCart} = useContext(CartContext)
 
     function add(){
         if(counter < item.stock){
@@ -30,8 +30,6 @@ function ItemDetail({item}) {
         setQuantityAdded(counter)
         updateCart(item, counter)        
     }
-
-    /* updateSize() */
 
     return (
         <div className="itemDetail" >
